@@ -1,0 +1,228 @@
+TiLog
+v7
+r0
+t291135219.991898
+cCheck dependencies
+cProcessInfoPlistFile /Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/Info.plist iLog-Info.plist
+cCopyStringsFile /Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileXIB /Users/ross/Personal/Programing/iLog/English.lproj/MainMenu.xib
+cProcessPCH /var/folders/rF/rFNHGHQ8ENSIsFllX-q2y++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iLog_Prefix-hcrlljbxunclehdiowfadubrcqsh/iLog_Prefix.pch.gch iLog_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004ABBF0FD00000000000000EE
+t1253830909
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CalendarStore.framework/Headers/CalendarStore.h
+c000000004A5ED83F00000000000001CF
+t1247729727
+s463
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000004A1F2D63000000000000A5E0
+t1243557219
+s42464
+
+N/Users/ross/Personal/Programing/iLog/English.lproj/InfoPlist.strings
+c000000004BA994C5000000000000002D
+t1269404869
+s45
+
+N/Users/ross/Personal/Programing/iLog/English.lproj/MainMenu.xib
+c000000004BA994C5000000000002BB4A
+t1269404869
+s179018
+
+N/Users/ross/Personal/Programing/iLog/ILCalController.h
+c000000004BA9913900000000000002FF
+t1269403961
+s767
+i<Cocoa/Cocoa.h>
+i"ILCalendar.h"
+i"ILPeriod.h"
+i<CalendarStore/CalendarStore.h>
+
+N/Users/ross/Personal/Programing/iLog/ILCalController.m
+c000000004BAA27650000000000000A87
+t1269442405
+s2695
+i"ILCalController.h"
+
+N/Users/ross/Personal/Programing/iLog/ILCalendar.h
+c000000004BAA27650000000000000221
+t1269442405
+s545
+i<Cocoa/Cocoa.h>
+
+N/Users/ross/Personal/Programing/iLog/ILCalendar.m
+c000000004BAA27650000000000000493
+t1269442405
+s1171
+i"ILCalendar.h"
+i"ILPeriod.h"
+
+N/Users/ross/Personal/Programing/iLog/ILPeriod.h
+c000000004BA93CF40000000000000184
+t1269382388
+s388
+i<Cocoa/Cocoa.h>
+i"ILCalendar.h"
+
+N/Users/ross/Personal/Programing/iLog/ILPeriod.m
+c000000004BAA2765000000000000026F
+t1269442405
+s623
+i"ILPeriod.h"
+
+N/Users/ross/Personal/Programing/iLog/build/Debug/iLog.app
+t2
+s0
+
+N/Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/Info.plist
+t1269442406
+s877
+
+N/Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/MacOS/iLog
+t2
+s0
+
+N/Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/PkgInfo
+t1269442406
+s8
+
+N/Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/Resources/English.lproj/InfoPlist.strings
+t1269442406
+s92
+
+N/Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/Resources/English.lproj/MainMenu.nib
+t1269442407
+s34338
+
+N/Users/ross/Personal/Programing/iLog/build/iLog.build/Debug/iLog.build/Objects-normal/x86_64/ILCalController.o
+t2
+s0
+
+N/Users/ross/Personal/Programing/iLog/build/iLog.build/Debug/iLog.build/Objects-normal/x86_64/ILCalendar.o
+t2
+s0
+
+N/Users/ross/Personal/Programing/iLog/build/iLog.build/Debug/iLog.build/Objects-normal/x86_64/ILPeriod.o
+t2
+s0
+
+N/Users/ross/Personal/Programing/iLog/build/iLog.build/Debug/iLog.build/Objects-normal/x86_64/iLog.LinkFileList
+c000000004BAA27660000000000000214
+t1269442406
+s532
+
+N/Users/ross/Personal/Programing/iLog/build/iLog.build/Debug/iLog.build/Objects-normal/x86_64/iLogAppDelegate.o
+t2
+s0
+
+N/Users/ross/Personal/Programing/iLog/build/iLog.build/Debug/iLog.build/Objects-normal/x86_64/main.o
+t2
+s0
+
+N/Users/ross/Personal/Programing/iLog/iLogAppDelegate.h
+c000000004BA995090000000000000129
+t1269404937
+s297
+i<Cocoa/Cocoa.h>
+
+N/Users/ross/Personal/Programing/iLog/iLogAppDelegate.m
+c000000004BA994C5000000000000015B
+t1269404869
+s347
+i"iLogAppDelegate.h"
+
+N/Users/ross/Personal/Programing/iLog/iLog_Prefix.pch
+c000000004BAA276500000000000002B4
+t1269442405
+s692
+i<Cocoa/Cocoa.h>
+
+N/Users/ross/Personal/Programing/iLog/main.m
+c000000004BA994C500000000000000F1
+t1269404869
+s241
+i<Cocoa/Cocoa.h>
+
+N/var/folders/rF/rFNHGHQ8ENSIsFllX-q2y++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iLog_Prefix-hcrlljbxunclehdiowfadubrcqsh/iLog_Prefix.pch.gch
+t2
+s0
+
+NiLog-Info.plist
+c000000004BA994C500000000000003EA
+t1269404869
+s1002
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies291135206#291135206#0(0"0(0#1#0"7947009927035180032#0"0#
+
+CCompileC build/iLog.build/Debug/iLog.build/Objects-normal/x86_64/ILCalController.o /Users/ross/Personal/Programing/iLog/ILCalController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/iLog.build/Debug/iLog.build/Objects-normal/x86_64/ILCalendar.o /Users/ross/Personal/Programing/iLog/ILCalendar.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/iLog.build/Debug/iLog.build/Objects-normal/x86_64/ILPeriod.o /Users/ross/Personal/Programing/iLog/ILPeriod.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/iLog.build/Debug/iLog.build/Objects-normal/x86_64/iLogAppDelegate.o /Users/ross/Personal/Programing/iLog/iLogAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/iLog.build/Debug/iLog.build/Objects-normal/x86_64/main.o /Users/ross/Personal/Programing/iLog/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileXIB /Users/ross/Personal/Programing/iLog/English.lproj/MainMenu.xib
+s291135206.151627
+e291135207.755350
+r1
+xCompileXIB
+x/Users/ross/Personal/Programing/iLog/English.lproj/MainMenu.xib
+lSLF07#2@37"CompileXIB English.lproj/MainMenu.xib291135206#291135207#0(0"0(0#0#63"/Users/ross/Personal/Programing/iLog/English.lproj/MainMenu.xib4300934600#318"    cd /Users/ross/Personal/Programing/iLog    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/Resources/English.lproj/MainMenu.nib /Users/ross/Personal/Programing/iLog/English.lproj/MainMenu.xib0#
+
+CCopyStringsFile /Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s291135206.139241
+e291135206.982223
+r1
+xCopyStringsFile
+x/Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings291135206#291135206#0(0"0(0#0#68"/Users/ross/Personal/Programing/iLog/English.lproj/InfoPlist.strings4300934600#358"    cd /Users/ross/Personal/Programing/iLog    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/Resources/English.lproj0#
+
+CLd /Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/MacOS/iLog normal x86_64
+r0
+
+CProcessInfoPlistFile /Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/Info.plist iLog-Info.plist
+s291135206.090700
+e291135206.139128
+r1
+xProcessInfoPlistFile
+x/Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/Info.plist
+xiLog-Info.plist
+lSLF07#2@23"Process iLog-Info.plist291135206#291135206#0(0"0(0#0#52"/Users/ross/Personal/Programing/iLog/iLog-Info.plist21392549204656232#295"    cd /Users/ross/Personal/Programing/iLog    builtin-infoPlistUtility iLog-Info.plist -genpkginfo /Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/ross/Personal/Programing/iLog/build/Debug/iLog.app/Contents/Info.plist0#
+
+CProcessPCH /var/folders/rF/rFNHGHQ8ENSIsFllX-q2y++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iLog_Prefix-hcrlljbxunclehdiowfadubrcqsh/iLog_Prefix.pch.gch iLog_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s291135207.755628
+e291135219.991594
+r0
+xProcessPCH
+x/var/folders/rF/rFNHGHQ8ENSIsFllX-q2y++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iLog_Prefix-hcrlljbxunclehdiowfadubrcqsh/iLog_Prefix.pch.gch
+xiLog_Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/ross/Personal/Programing/iLog/iLog_Prefix.pch:14: error: expected '=', ',', ';', 'asm' or '__attribute__' before '*' token
+lSLF07#2@26"Precompile iLog_Prefix.pch291135207#291135219#0(130"/Users/ross/Personal/Programing/iLog/iLog_Prefix.pch:14: error: expected '=', ',', ';', 'asm' or '__attribute__' before '*' token1(4@65"Expected '=', ',', ';', 'asm' or '__attribute__' before '*' token291135212#0#130#0(6@52"/Users/ross/Personal/Programing/iLog/iLog_Prefix.pch291135205#14#0#14#0#19"expected * before *0(0#0#52"/Users/ross/Personal/Programing/iLog/iLog_Prefix.pch4300934600#1294"    cd /Users/ross/Personal/Programing/iLog    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fobjc-gc-only -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/ross/Personal/Programing/iLog/build/iLog.build/Debug/iLog.build/iLog-generated-files.hmap -I/Users/ross/Personal/Programing/iLog/build/iLog.build/Debug/iLog.build/iLog-own-target-headers.hmap -I/Users/ross/Personal/Programing/iLog/build/iLog.build/Debug/iLog.build/iLog-all-target-headers.hmap -iquote /Users/ross/Personal/Programing/iLog/build/iLog.build/Debug/iLog.build/iLog-project-headers.hmap -F/Users/ross/Personal/Programing/iLog/build/Debug -I/Users/ross/Personal/Programing/iLog/build/Debug/include -I/Users/ross/Personal/Programing/iLog/build/iLog.build/Debug/iLog.build/DerivedSources/x86_64 -I/Users/ross/Personal/Programing/iLog/build/iLog.build/Debug/iLog.build/DerivedSources -c /Users/ross/Personal/Programing/iLog/iLog_Prefix.pch -o /var/folders/rF/rFNHGHQ8ENSIsFllX-q2y++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iLog_Prefix-hcrlljbxunclehdiowfadubrcqsh/iLog_Prefix.pch.gch1#
+
+CTouch /Users/ross/Personal/Programing/iLog/build/Debug/iLog.app
+r0
+

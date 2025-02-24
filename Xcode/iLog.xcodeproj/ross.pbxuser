@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	089C165DFE840E0CC02AAC07 /* English */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1117, 507}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 45}";
+		};
+	};
+	256AC3D80F4B6AC300CF3369 /* iLogAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1130, 601}}";
+			sepNavSelRange = "{468, 0}";
+			sepNavVisRange = "{0, 1255}";
+		};
+	};
+	256AC3D90F4B6AC300CF3369 /* iLogAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavFolds = "{\n    c =     (\n                {\n            l = \"(NSImage *)image\";\n            r = \"{755, 20}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 2614}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {853, 1040}}";
+			sepNavSelRange = "{796, 0}";
+			sepNavVisRange = "{0, 798}";
+		};
+	};
+	256AC3F00F4B6AF500CF3369 /* iLog_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1130, 592}}";
+			sepNavSelRange = "{469, 0}";
+			sepNavVisRange = "{0, 709}";
+			sepNavWindowFrame = "{{15, 43}, {1000, 830}}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeExecutable = 91D85C0B1159CC45006C742D /* iLog */;
+		activeTarget = 8D1107260486CEB800E47090 /* iLog */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* iLog */,
+		);
+		breakpoints = (
+		);
+		codeSenseManager = 91D85C1D1159CC56006C742D /* Code sense */;
+		executables = (
+			91D85C0B1159CC45006C742D /* iLog */,
+		);
+		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA23EDF0692099D00951B8B" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					355,
+					20,
+					255,
+					255,
+					184,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					952,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 299039750;
+			PBXWorkspaceStateSaveDate = 299039750;
+		};
+		perUserProjectItems = {
+			9101FA6B11D40C590017F536 = 9101FA6B11D40C590017F536 /* PBXTextBookmark */;
+			9101FA6C11D40C590017F536 = 9101FA6C11D40C590017F536 /* PBXTextBookmark */;
+			9101FA6D11D40C590017F536 = 9101FA6D11D40C590017F536 /* PBXTextBookmark */;
+			9101FA6E11D40C590017F536 = 9101FA6E11D40C590017F536 /* PBXTextBookmark */;
+			9101FA6F11D40C590017F536 = 9101FA6F11D40C590017F536 /* PBXTextBookmark */;
+			9101FA7011D40C590017F536 = 9101FA7011D40C590017F536 /* PBXTextBookmark */;
+			9101FA7111D40C590017F536 = 9101FA7111D40C590017F536 /* PBXTextBookmark */;
+			9101FA7211D40C590017F536 = 9101FA7211D40C590017F536 /* PBXTextBookmark */;
+			9101FA7311D40C590017F536 = 9101FA7311D40C590017F536 /* PBXTextBookmark */;
+			9101FA7411D40C590017F536 = 9101FA7411D40C590017F536 /* PBXTextBookmark */;
+			9101FA7511D40C590017F536 = 9101FA7511D40C590017F536 /* PBXBookmark */;
+			915B635611C701CE004B27D9 = 915B635611C701CE004B27D9 /* PBXBookmark */;
+			915B635811C701CE004B27D9 = 915B635811C701CE004B27D9 /* PBXTextBookmark */;
+			915B635911C701CE004B27D9 = 915B635911C701CE004B27D9 /* PBXTextBookmark */;
+			915B635A11C701CE004B27D9 = 915B635A11C701CE004B27D9 /* PBXTextBookmark */;
+			915B635D11C701CE004B27D9 = 915B635D11C701CE004B27D9 /* PBXTextBookmark */;
+			9190F330119F908F00DD40F3 = 9190F330119F908F00DD40F3 /* PBXTextBookmark */;
+			91D3052C11D2BC24009C13F9 = 91D3052C11D2BC24009C13F9 /* PBXBookmark */;
+		};
+		sourceControlManager = 91D85C1C1159CC56006C742D /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {853, 400}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 241}";
+		};
+	};
+	8D1107260486CEB800E47090 /* iLog */ = {
+		activeExec = 0;
+		executables = (
+			91D85C0B1159CC45006C742D /* iLog */,
+		);
+	};
+	8D1107310486CEB800E47090 /* iLog-Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{66, 4}, {976, 765}}";
+		};
+	};
+	9101FA6B11D40C590017F536 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3F00F4B6AF500CF3369 /* iLog_Prefix.pch */;
+		name = "iLog_Prefix.pch: 16";
+		rLen = 0;
+		rLoc = 469;
+		rType = 0;
+		vrLen = 709;
+		vrLoc = 0;
+	};
+	9101FA6C11D40C590017F536 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 91D85C231159CC62006C742D /* ILCalController.m */;
+		name = "ILCalController.m: 50";
+		rLen = 0;
+		rLoc = 1032;
+		rType = 0;
+		vrLen = 1490;
+		vrLoc = 3446;
+	};
+	9101FA6D11D40C590017F536 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 91D85C221159CC62006C742D /* ILCalController.h */;
+		name = "ILCalController.h: 18";
+		rLen = 0;
+		rLoc = 373;
+		rType = 0;
+		vrLen = 1110;
+		vrLoc = 0;
+	};
+	9101FA6E11D40C590017F536 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 91AAB7FC1162810000D7C696 /* ILPreferencesPanelController.h */;
+		name = "ILPreferencesPanelController.h: 23";
+		rLen = 0;
+		rLoc = 523;
+		rType = 0;
+		vrLen = 1402;
+		vrLoc = 0;
+	};
+	9101FA6F11D40C590017F536 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 91AAB7FD1162810000D7C696 /* ILPreferencesPanelController.m */;
+		name = "ILPreferencesPanelController.m: 47";
+		rLen = 0;
+		rLoc = 2121;
+		rType = 0;
+		vrLen = 2522;
+		vrLoc = 526;
+	};
+	9101FA7011D40C590017F536 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 91EBCB96115D0B8200D1E913 /* ILTableViewDelegate.h */;
+		name = "ILTableViewDelegate.h: 1";
+		rLen = 280;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 280;
+		vrLoc = 0;
+	};
+	9101FA7111D40C590017F536 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 91EBCB95115D0B8200D1E913 /* ILTableViewDelegate.m */;
+		name = "ILTableViewDelegate.m: 26";
+		rLen = 0;
+		rLoc = 511;
+		rType = 0;
+		vrLen = 511;
+		vrLoc = 0;
+	};
+	9101FA7211D40C590017F536 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 91EBC6AF115BE84600D1E913 /* ILCalendarListController.h */;
+		name = "ILCalendarListController.h: 23";
+		rLen = 0;
+		rLoc = 565;
+		rType = 0;
+		vrLen = 1410;
+		vrLoc = 0;
+	};
+	9101FA7311D40C590017F536 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 91EBC6B0115BE84600D1E913 /* ILCalendarListController.m */;
+		name = "ILCalendarListController.m: 52";
+		rLen = 0;
+		rLoc = 1686;
+		rType = 0;
+		vrLen = 1943;
+		vrLoc = 595;
+	};
+	9101FA7411D40C590017F536 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 91EBC6B0115BE84600D1E913 /* ILCalendarListController.m */;
+		name = "ILCalendarListController.m: 52";
+		rLen = 0;
+		rLoc = 1686;
+		rType = 0;
+		vrLen = 1942;
+		vrLoc = 595;
+	};
+	9101FA7511D40C590017F536 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 8D1107310486CEB800E47090 /* iLog-Info.plist */;
+		name = "/Volumes/Storage/Documents/Programming Projects/iLog/Xcode/iLog-Info.plist";
+	};
+	915B635611C701CE004B27D9 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 8D1107310486CEB800E47090 /* iLog-Info.plist */;
+		name = "/Volumes/Storage/Documents/Programming Projects/iLog/Xcode/iLog-Info.plist";
+	};
+	915B635811C701CE004B27D9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 241;
+		vrLoc = 0;
+	};
+	915B635911C701CE004B27D9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 91D85C211159CC61006C742D /* ILCalendar.m */;
+		name = "ILCalendar.m: 16";
+		rLen = 0;
+		rLoc = 294;
+		rType = 0;
+		vrLen = 1050;
+		vrLoc = 396;
+	};
+	915B635A11C701CE004B27D9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* iLogAppDelegate.m */;
+		name = "iLogAppDelegate.m: 30";
+		rLen = 0;
+		rLoc = 815;
+		rType = 0;
+		vrLen = 817;
+		vrLoc = 0;
+	};
+	915B635D11C701CE004B27D9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D80F4B6AC300CF3369 /* iLogAppDelegate.h */;
+		name = "iLogAppDelegate.h: 19";
+		rLen = 0;
+		rLoc = 468;
+		rType = 0;
+		vrLen = 1255;
+		vrLoc = 0;
+	};
+	9190F330119F908F00DD40F3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 91D85C1F1159CC61006C742D /* ILPeriod.m */;
+		name = "ILPeriod.m: 1";
+		rLen = 1487;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1234;
+		vrLoc = 0;
+	};
+	91AAB7FC1162810000D7C696 /* ILPreferencesPanelController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1130, 592}}";
+			sepNavSelRange = "{523, 0}";
+			sepNavVisRange = "{0, 1402}";
+		};
+	};
+	91AAB7FD1162810000D7C696 /* ILPreferencesPanelController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1153, 1118}}";
+			sepNavSelRange = "{2121, 0}";
+			sepNavVisRange = "{526, 2522}";
+		};
+	};
+	91D3052C11D2BC24009C13F9 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 8D1107310486CEB800E47090 /* iLog-Info.plist */;
+		name = "/Volumes/Storage/Documents/Programming Projects/iLog/Xcode/iLog-Info.plist";
+	};
+	91D85C0B1159CC45006C742D /* iLog */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = iLog;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	91D85C1C1159CC56006C742D /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	91D85C1D1159CC56006C742D /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	91D85C1E1159CC61006C742D /* ILPeriod.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1117, 507}}";
+			sepNavSelRange = "{0, 548}";
+			sepNavVisRange = "{0, 548}";
+			sepNavWindowFrame = "{{15, 43}, {1000, 830}}";
+		};
+	};
+	91D85C1F1159CC61006C742D /* ILPeriod.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {853, 728}}";
+			sepNavSelRange = "{0, 1487}";
+			sepNavVisRange = "{0, 1234}";
+		};
+	};
+	91D85C201159CC61006C742D /* ILCalendar.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1117, 486}}";
+			sepNavSelRange = "{0, 534}";
+			sepNavVisRange = "{0, 534}";
+			sepNavWindowFrame = "{{38, 22}, {1000, 830}}";
+		};
+	};
+	91D85C211159CC61006C742D /* ILCalendar.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {853, 871}}";
+			sepNavSelRange = "{294, 0}";
+			sepNavVisRange = "{396, 1050}";
+			sepNavWindowFrame = "{{38, 22}, {1000, 830}}";
+		};
+	};
+	91D85C221159CC62006C742D /* ILCalController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1130, 598}}";
+			sepNavSelRange = "{373, 0}";
+			sepNavVisRange = "{0, 1110}";
+		};
+	};
+	91D85C231159CC62006C742D /* ILCalController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1412, 2158}}";
+			sepNavSelRange = "{1032, 0}";
+			sepNavVisRange = "{3446, 1490}";
+			sepNavWindowFrame = "{{452, 246}, {1000, 830}}";
+		};
+	};
+	91EBC6AF115BE84600D1E913 /* ILCalendarListController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1130, 592}}";
+			sepNavSelRange = "{565, 0}";
+			sepNavVisRange = "{0, 1410}";
+		};
+	};
+	91EBC6B0115BE84600D1E913 /* ILCalendarListController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1412, 1443}}";
+			sepNavSelRange = "{1686, 0}";
+			sepNavVisRange = "{595, 1942}";
+		};
+	};
+	91EBCB95115D0B8200D1E913 /* ILTableViewDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1130, 592}}";
+			sepNavSelRange = "{511, 0}";
+			sepNavVisRange = "{0, 511}";
+			sepNavWindowFrame = "{{38, 322}, {1000, 830}}";
+		};
+	};
+	91EBCB96115D0B8200D1E913 /* ILTableViewDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1130, 592}}";
+			sepNavSelRange = "{0, 280}";
+			sepNavVisRange = "{0, 280}";
+		};
+	};
+}

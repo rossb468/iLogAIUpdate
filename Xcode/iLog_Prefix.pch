@@ -1,0 +1,27 @@
+//
+// Prefix header for all source files of the 'iLog' target in the 'iLog' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+	static inline NSString* BOOLEAN(id theObject) {
+		if (theObject)
+			return @"TRUE";
+		else
+			return @"FALSE";
+	}
+	static inline NSDate* START_OF_CURRENT_YEAR() {
+		NSDateComponents *myDateComponents = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit) fromDate:[NSDate date]];
+		[myDateComponents setWeek:1];
+		[myDateComponents setMonth:1];
+		[myDateComponents setWeekday:1];
+	
+		return [[NSCalendar currentCalendar] dateFromComponents:myDateComponents];
+	}
+#endif
+
+#define MINUTE	60
+#define HOUR	3600
+#define DAY		86400
+#define WEEK	604800
+#define	YEAR	31556926

@@ -44,12 +44,12 @@
     statusItem.menu = statusMenu;
 
     self.eventStore = [[EKEventStore alloc] init];
-    [self.eventStore requestFullAccessToEventsWithCompletion:^(BOOL granted, NSError * _Nullable error) {
+    void (^handleAccess)(BOOL, NSError *) = ^(BOOL granted, NSError * _Nullable error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (granted) {
                 [self showMainWindow];
-                if ([calListController respondsToSelector:@selector(loadCalendarsFromEventStore:)]) {
-                    [calListController loadCalendarsFromEventStore:self.eventStore];
+                if ([self->calListController respondsToSelector:@selector(loadCalendarsFromEventStore:)]) {
+                    [self->calListController loadCalendarsFromEventStore:self.eventStore];
                 }
             } else {
                 NSAlert *alert = [[NSAlert alloc] init];
@@ -59,7 +59,15 @@
                 [NSApp terminate:self];
             }
         });
-    }];
+    };
+    if (@available(macOS 14.0, *)) {
+        [self.eventStore requestFullAccessToEventsWithCompletion:handleAccess];
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        [self.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:handleAccess];
+#pragma clang diagnostic pop
+    }
 }
 
 - (void)showMainWindow {

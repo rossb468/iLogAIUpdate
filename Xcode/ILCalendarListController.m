@@ -36,6 +36,10 @@
     return self;
 }
 
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)loadCalendarsFromEventStore:(EKEventStore *)store {
     self.eventStore = store;
     [self loadCalendarsFromEventKit];
@@ -45,6 +49,10 @@
 -(void)loadCalendarsFromEventKit {
     if (!self.eventStore) { return; }
 
+    // Remove notification observers for old calendar controllers before releasing them
+    for (ILCalController *oldController in calArray) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CalendarUpdatedNotification" object:oldController];
+    }
     [calArray removeAllObjects];
     
     EKAuthorizationStatus s = [EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent];

@@ -25,8 +25,8 @@
 	// Update the calendar name label using EventKit-backed calController
 	[[self calendarNameField] setStringValue:[NSString stringWithFormat:@"Preferences for Calendar:  %@", [[self calController] calName]]];
 	[self updateDisplayValues];
-    [_window beginSheet:preferencesPanel completionHandler:^(NSModalResponse returnCode) {
-        [self didEndSheet:preferencesPanel returnCode:returnCode contextInfo:nil];
+    [_window beginSheet:self->preferencesPanel completionHandler:^(NSModalResponse returnCode) {
+        [self didEndSheet:self->preferencesPanel returnCode:returnCode contextInfo:nil];
     }];
 }
 

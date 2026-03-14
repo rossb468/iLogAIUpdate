@@ -89,6 +89,10 @@
 
 #pragma mark - Init Methods
 
+-(void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 -(id)init {
 	return [self initWithCalID:nil];
 }

@@ -26,14 +26,14 @@
 	NSMenu *statusMenu;
 }
 
-@property (assign) IBOutlet NSMenu *statusMenu;
-@property (assign) NSStatusItem *statusItem;
-@property (assign) IBOutlet NSButton *preferenceButton;
+@property (strong) IBOutlet NSMenu *statusMenu;
+@property (strong) NSStatusItem *statusItem;
+@property (strong) IBOutlet NSButton *preferenceButton;
 @property NSInteger lastArraySize;
-@property (assign) IBOutlet ILPreferencesPanelController *prefPanelController;
-@property (assign) IBOutlet NSTableView *primaryTableView;
-@property (assign) IBOutlet ILCalendarListController *calListController;
-@property (assign) IBOutlet NSPanel *window;
+@property (strong) IBOutlet ILPreferencesPanelController *prefPanelController;
+@property (strong) IBOutlet NSTableView *primaryTableView;
+@property (strong) IBOutlet ILCalendarListController *calListController;
+@property (strong) IBOutlet NSPanel *window;
 
 -(void)calendarListChanged:(NSNotification *)notification;
 -(IBAction)openPreferenceSheet:(id)sender;

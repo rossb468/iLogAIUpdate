@@ -11,7 +11,7 @@
 
 
 -(void)mouseDown:(NSEvent *)theEvent {
-
+	[super mouseDown:theEvent];
 }
 
 -(void)mouseDragged:(NSEvent *)theEvent {

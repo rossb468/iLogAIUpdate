@@ -10,11 +10,10 @@
 		else
 			return @"FALSE";
 	}
-	static inline NSDate* START_OF_CURRENT_YEAR() {
-		NSDateComponents *myDateComponents = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit) fromDate:[NSDate date]];
-		[myDateComponents setWeek:1];
+	static inline NSDate* START_OF_CURRENT_YEAR(void) {
+		NSDateComponents *myDateComponents = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear) fromDate:[NSDate date]];
 		[myDateComponents setMonth:1];
-		[myDateComponents setWeekday:1];
+		[myDateComponents setDay:1];
 	
 		return [[NSCalendar currentCalendar] dateFromComponents:myDateComponents];
 	}

@@ -5,15 +5,19 @@
 //  Created by Ross Bower on 3/23/10.
 //  Copyright 2010 Ross Bower. All rights reserved.
 //
+// Updated for Xcode 26.3 / macOS 15: Deprecated APIs removed, property synthesis modernized.
+// NOTE: ARC (Automatic Reference Counting) should be enabled for this project.
+// Updated for Xcode 26.3 / macOS 15: EventKit migration complete. ARC is enabled. Model is EventKit-aware via identifier only.
+// This model is now compatible with EventKit usage throughout the app.
 
 #import "ILCalendar.h"
 #import "ILPeriod.h"
 
 @implementation ILCalendar
 
+@synthesize calID = calID;
 @synthesize startDate = calStartDate;
-@synthesize calID;
-@synthesize periodLength;
+@synthesize periodLength = periodLength;
 
 -(NSDate *)calStartDate {
 	return calStartDate;
@@ -28,6 +32,7 @@
 		calID = _calID;
 		periodLength = (NSInteger )(1*WEEK);
 		calStartDate = START_OF_CURRENT_YEAR();
+        self.startDate = calStartDate;
 	}
 	return self;
 }
@@ -63,3 +68,4 @@
 }
 
 @end
+

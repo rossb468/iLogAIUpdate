@@ -6,14 +6,61 @@
 //  Copyright 2010 Ross Bower. All rights reserved.
 //
 
+// Updated for Xcode 26.3 / macOS 15: CalendarStore APIs removed, migrated to EventKit.
+// NOTE: ARC (Automatic Reference Counting) is enabled for this project.
+
 #import "ILCalController.h"
+#import <EventKit/EventKit.h>
 
+@implementation ILCalController {
+    EKEventStore *_eventStore;
+}
 
-@implementation ILCalController
+@synthesize dataModel = dataModel;
+@synthesize currentPeriod = currentPeriod;
+@synthesize periodArray = periodArray;
 
-@synthesize dataModel;
-@synthesize currentPeriod;
-@synthesize periodArray;
+#pragma mark - Authorization
+
+// Ensures the app has authorization to access calendar events. Calls completion on main queue.
+- (void)ensureEventAccessWithCompletion:(void (^)(BOOL granted))completion {
+    EKAuthorizationStatus status = [EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent];
+    BOOL isAuthorized = NO;
+    if (@available(macOS 14.0, *)) {
+        isAuthorized = (status == EKAuthorizationStatusFullAccess);
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        isAuthorized = (status == EKAuthorizationStatusAuthorized);
+#pragma clang diagnostic pop
+    }
+    if (isAuthorized) {
+        if (completion) { dispatch_async(dispatch_get_main_queue(), ^{ completion(YES); }); }
+        return;
+    }
+    if (status == EKAuthorizationStatusNotDetermined) {
+        // Request access. EventKit calls back on an arbitrary queue; hop to main for UI updates.
+        if (@available(macOS 14.0, *)) {
+            [_eventStore requestFullAccessToEventsWithCompletion:^(BOOL granted, NSError * _Nullable error) {
+                (void)error;
+                if (completion) { dispatch_async(dispatch_get_main_queue(), ^{ completion(granted); }); }
+            }];
+        } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+            [_eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError * _Nullable error) {
+                (void)error;
+                if (completion) { dispatch_async(dispatch_get_main_queue(), ^{ completion(granted); }); }
+            }];
+#pragma clang diagnostic pop
+        }
+        return;
+    }
+    // Denied or restricted
+    if (completion) { dispatch_async(dispatch_get_main_queue(), ^{ completion(NO); }); }
+}
+
+#pragma mark - Properties
 
 //---Map to dataModel---
 -(NSString *)calID {
@@ -30,7 +77,8 @@
 //---End Map to dataModel---
 
 -(NSString *)calName {
-	return [[[CalCalendarStore defaultCalendarStore] calendarWithUID:[self calID]] title];
+    EKCalendar *calendar = [_eventStore calendarWithIdentifier:[self calID]];
+    return calendar.title ?: @"(No Calendar)";
 }
 
 -(void)setCurrentPeriod:(ILPeriod *)_currentPeriod {
@@ -39,21 +87,34 @@
 	[self dataModelChanged];
 }
 
-//---Init Methods---
+#pragma mark - Init Methods
+
 -(id)init {
 	return [self initWithCalID:nil];
 }
 
 -(id)initWithName:(NSString *)name {
-	for(CalCalendar *aCalendar in [[CalCalendarStore defaultCalendarStore] calendars])
-		if([[aCalendar title] isEqual:name])
-			return [self initWithCalID:[aCalendar uid]];
+	// Fetch calendar by name using EKEventStore
+	if (!_eventStore) {
+		_eventStore = [[EKEventStore alloc] init];
+	}
 	
+	NSArray<EKCalendar *> *calendars = [_eventStore calendarsForEntityType:EKEntityTypeEvent];
+	for (EKCalendar *aCalendar in calendars) {
+		if ([aCalendar.title isEqualToString:name]) {
+			return [self initWithCalID:aCalendar.calendarIdentifier eventStore:_eventStore];
+		}
+	}
 	return [self init];
 }
 
 -(id)initWithCalID:(NSString *)_calID {
+	return [self initWithCalID:_calID eventStore:nil];
+}
+
+-(id)initWithCalID:(NSString *)_calID eventStore:(EKEventStore *)store {
 	if (self = [super init]) {
+		_eventStore = store ?: [[EKEventStore alloc] init];
 		dataModel = [[ILCalendar alloc] initWithCalID:_calID];
 		
 		[self loadCalendarPreferences];
@@ -61,22 +122,22 @@
 		currentPeriod = [[self dataModel] periodForDate:[NSDate date]];
 		[self updatePeriodArray];
 		
-		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(calendarStoreChanged:) name:CalCalendarsChangedExternallyNotification object:[CalCalendarStore defaultCalendarStore]];
+		// Observe EKEventStoreChangedNotification for calendar changes
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eventStoreChanged:) name:EKEventStoreChangedNotification object:_eventStore];
 	}
 	return self;
 }
-//---End Init Methods---
+
+#pragma mark - Business Logic
 
 -(NSNumber *)hoursWorked {
 	NSInteger _timeWorked = [[self timeWorkedForPeriodWithDate:[[self currentPeriod] startDate]] integerValue] / HOUR;
 	return (NSNumber *)[NSNumber numberWithInteger:_timeWorked];
 }
 
--(void)calendarStoreChanged:(NSNotification *)notification {
-	NSArray *updatedRecords = [[notification userInfo] valueForKey:CalUpdatedRecordsKey];
-	if (updatedRecords != nil) {
-		[self dataModelChanged];
-	}
+-(void)eventStoreChanged:(NSNotification *)notification {
+	// Respond to EventKit store changes by updating data model
+	[self dataModelChanged];
 }
 
 -(void)dataModelChanged {
@@ -102,18 +163,45 @@
 
 -(NSNumber *)timeWorkedForPeriodWithDate:(NSDate *)date {
 	ILPeriod *thePeriod = [[self dataModel] periodForDate:date];
+    if (!thePeriod || ![thePeriod startDate] || ![thePeriod endDate]) {
+        return @(0.0);
+    }
 	
-	CalCalendar *representedCalendar = [[CalCalendarStore defaultCalendarStore] calendarWithUID:[self calID]];
+	EKCalendar *representedCalendar = [_eventStore calendarWithIdentifier:[self calID]];
+	if (!representedCalendar) {
+		return @(0.0);
+	}
+
+    EKAuthorizationStatus status = [EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent];
+    if (status == EKAuthorizationStatusNotDetermined) {
+        [self ensureEventAccessWithCompletion:^(BOOL granted) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:(granted ? @"CalendarAccessGrantedNotification" : @"CalendarAccessDeniedNotification") object:self];
+        }];
+        return @(0.0);
+    }
+    BOOL isAuthorized = NO;
+    if (@available(macOS 14.0, *)) {
+        isAuthorized = (status == EKAuthorizationStatusFullAccess);
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        isAuthorized = (status == EKAuthorizationStatusAuthorized);
+#pragma clang diagnostic pop
+    }
+    if (!isAuthorized) {
+        return @(0.0);
+    }
+
+	NSPredicate *predicate = [_eventStore predicateForEventsWithStartDate:[thePeriod startDate] endDate:[thePeriod endDate] calendars:@[representedCalendar]];
 	
-	NSPredicate *predicate = [CalCalendarStore eventPredicateWithStartDate:[thePeriod startDate] endDate:[thePeriod endDate] calendars:[NSArray arrayWithObject:representedCalendar]];
-	NSMutableArray *eventList = [NSMutableArray arrayWithArray:[[CalCalendarStore defaultCalendarStore] eventsWithPredicate:predicate]];
+	NSArray<EKEvent *> *eventList = [_eventStore eventsMatchingPredicate:predicate];
 	
-	double timeWorked = 0.0;
-	for(CalEvent *theEvent in eventList) {
-		timeWorked += [[theEvent endDate] timeIntervalSinceDate:[theEvent startDate]];
+	NSTimeInterval timeWorked = 0.0;
+	for (EKEvent *theEvent in eventList) {
+		timeWorked += [theEvent.endDate timeIntervalSinceDate:theEvent.startDate];
 	}
 	
-	return (NSNumber *)[NSNumber numberWithDouble:timeWorked];
+	return @(timeWorked);
 }
 
 -(void)setCurrentPeriodForDate:(NSDate *)date {
@@ -121,31 +209,58 @@
 }
 
 -(void)updatePeriodArray {
-	periodArray = [self getPeriodListForDate:[[self currentPeriod] startDate]];
+    ILPeriod *cp = [self currentPeriod];
+    if (cp) {
+        periodArray = [self getPeriodListForDate:[cp startDate]];
+    } else {
+        periodArray = [NSMutableArray array];
+    }
 }
 
 -(NSMutableArray *)getPeriodListForDate:(NSDate *)date {
-	ILPeriod *_currentPeriod = [[self dataModel] periodForDate:date];
-	NSInteger  startID = [_currentPeriod periodID]-8;
-	NSInteger  endID = [_currentPeriod periodID]+8;
-	
-	if(startID < 0)
-		startID = 0;
-	
-	NSMutableArray *_periodArray = [[NSMutableArray alloc] initWithCapacity:endID];
-	
-	for(int i=startID;i<endID;i++)
-		[_periodArray addObject:[[self dataModel] periodForID:i]];
-	
-	return _periodArray;
+    if (!date) {
+        return [NSMutableArray array];
+    }
+    ILPeriod *_currentPeriod = [[self dataModel] periodForDate:date];
+    if (!_currentPeriod) {
+        return [NSMutableArray array];
+    }
+    NSInteger startID = [_currentPeriod periodID] - 8;
+    NSInteger endID = [_currentPeriod periodID] + 8;
+
+    if (startID < 0) {
+        startID = 0;
+    }
+    if (endID < startID) {
+        endID = startID;
+    }
+
+    NSMutableArray *_periodArray = [[NSMutableArray alloc] initWithCapacity:(endID - startID)];
+
+    for (NSInteger i = startID; i < endID; i++) {
+        ILPeriod *p = [[self dataModel] periodForID:i];
+        if (p) {
+            [_periodArray addObject:p];
+        } else {
+            // Skip nil periods to avoid exceptions
+            continue;
+        }
+    }
+
+    return _periodArray;
 }
 
 -(void)writeCalendarPreferences {
-	NSArray *keys = [NSArray arrayWithObjects:@"calID", @"calStartDate", @"periodLength", nil];
-	NSArray *objects = [NSArray arrayWithObjects:[self calID], [self startDate], [NSNumber numberWithInteger:[self periodLength]], nil];
-	NSDictionary *prefsDict = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
-	
-	[[NSUserDefaults standardUserDefaults] setObject:prefsDict forKey:[self calID]];
+    NSString *prefsKey = [self calID];
+    if (!prefsKey) {
+        // If we don't have a calendar identifier yet, skip writing preferences.
+        return;
+    }
+    NSArray *keys = [NSArray arrayWithObjects:@"calID", @"calStartDate", @"periodLength", nil];
+    NSArray *objects = [NSArray arrayWithObjects:[self calID], [self startDate], [NSNumber numberWithInteger:[self periodLength]], nil];
+    NSDictionary *prefsDict = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+
+    [[NSUserDefaults standardUserDefaults] setObject:prefsDict forKey:prefsKey];
 }
 
 -(void)loadCalendarPreferences {
@@ -163,3 +278,4 @@
 }
 
 @end
+
